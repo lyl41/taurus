@@ -7,7 +7,7 @@ import (
 )
 
 func RegisterRouters(e *echo.Echo) {
-	e.Use(middlewares.HookCtx, middlewares.Logger, middlewares.Recover)
+	e.Use(middlewares.HookCtx, middlewares.Logger, middlewares.HandleErr, middlewares.Recover)
 	registerMember(e)
 	registerSendSms(e)
 }

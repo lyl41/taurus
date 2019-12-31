@@ -11,7 +11,7 @@ func GetMemberInfo(merchant, phone, name string, offset, limit int) (info []*tab
 	where := table.Members{
 		MchName: merchant,
 		Phone:   phone,
-		Status: common.StatusOk,
+		Status:  common.StatusOk,
 	}
 	db := GetDB().Where(where)
 	if name != "" {

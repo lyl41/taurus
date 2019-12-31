@@ -3,7 +3,6 @@ package api
 import (
 	"net/http"
 	"taurus/src/logic"
-	"taurus/src/model/dao/table"
 
 	"github.com/labstack/echo"
 )
@@ -13,9 +12,6 @@ type GetMemberInfoReq struct {
 	Phone    string `json:"phone"`
 	Name     string `json:"name"`
 	Pagination
-}
-type GetMemberInfoResp struct {
-	Data []*table.Members
 }
 
 func GetMemberInfo(c echo.Context) (err error) {

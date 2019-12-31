@@ -1,6 +1,6 @@
 package common
 
 const (
-	StatusOk = 1
+	StatusOk     = 1
 	StatusDelete = 2
 )
