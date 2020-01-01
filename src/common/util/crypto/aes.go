@@ -4,8 +4,7 @@ import (
 	"crypto/aes"
 	"crypto/cipher"
 	"fmt"
-
-	"code.qschou.com/qschou/go_center_common/crypto/padding"
+	"taurus/src/common/util/crypto/padding"
 )
 
 func AesEncrypt(origData, key []byte) (crypted []byte, err error) {

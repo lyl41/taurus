@@ -3,8 +3,7 @@ package crypto
 import (
 	"crypto/cipher"
 	"crypto/des"
-
-	"code.qschou.com/qschou/go_center_common/crypto/padding"
+	"taurus/src/common/util/crypto/padding"
 )
 
 func DesEncrypt(origData, key []byte) ([]byte, error) {
