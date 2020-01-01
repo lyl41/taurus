@@ -2,6 +2,7 @@ package routers
 
 import (
 	"taurus/src/api"
+	"taurus/src/routers/middlewares"
 
 	"github.com/labstack/echo"
 )
@@ -9,5 +10,6 @@ import (
 func registerMember(e *echo.Echo) {
 	g := e.Group("/member/")
 	g.Use()
-	g.POST("get-member-info", api.GetMemberInfo)
+	g.POST("login", api.Login)
+	g.POST("get-member-info", api.GetMemberInfo, middlewares.MustAuth)
 }

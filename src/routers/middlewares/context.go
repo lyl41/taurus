@@ -1,6 +1,10 @@
 package middlewares
 
-import "github.com/labstack/echo"
+import (
+	"taurus/src/common"
+
+	"github.com/labstack/echo"
+)
 
 func HookCtx(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
@@ -9,7 +13,6 @@ func HookCtx(next echo.HandlerFunc) echo.HandlerFunc {
 	}
 }
 
-// 标准返回的json格式，没有错误时，code为0，msg为空，data是数据；有错误时，code不为0，msg为具体的错误信息，data是null
 type StdResp struct {
 	Code int         `json:"code"`
 	Msg  string      `json:"msg"`
@@ -37,8 +40,8 @@ func (e *echoContext) JSON(code int, i interface{}) error {
 	// 当不是StdResp时，说明没有err
 	if _, ok := i.(StdResp); !ok {
 		i = StdResp{
-			Code: 0,
-			Msg:  "",
+			Code: common.SuccessCode,
+			Msg:  common.SuccessMsg,
 			Data: i,
 		}
 	}
