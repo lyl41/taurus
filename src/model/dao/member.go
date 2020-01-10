@@ -23,3 +23,11 @@ func GetMemberInfo(merchant, phone, name string, offset, limit int) (info []*tab
 	}
 	return
 }
+
+func InsertMember(memberInfo *table.Members) (err error) {
+	if err = GetDB().Create(memberInfo).Error; err != nil {
+		err = errors.Wrap(err, "insert member err")
+		return
+	}
+	return
+}
