@@ -5,8 +5,8 @@ import (
 	"taurus/src/logic"
 	"taurus/src/model/dao/table"
 
-	"github.com/chanxuehong/errors"
 	"github.com/labstack/echo"
+	"github.com/pkg/errors"
 )
 
 func AddMember(c echo.Context) (err error) {
