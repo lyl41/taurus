@@ -9,7 +9,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-func AddMember(c echo.Context) (err error) {
+func AddOneMember(c echo.Context) (err error) {
 	req := new(table.Members)
 	if err = c.Bind(req); err != nil {
 		return
